@@ -1,0 +1,7 @@
+
+1. Use titanic.csv and find how many male, female passengers are included.
+2. Can you find how many male, and how many female passengers survived?
+3. Use this API: https://jsonplaceholder.typicode.com/ read the posts and find how many posts are there.
+4. Using the previous API, can you find how many posts each user has?
+5. Use this API: https://random-word-api.herokuapp.com/word (not very frequently), then try to identify the word and
+present is as in the Hangman game. For example, if the word is "constituency", display c_________y.
