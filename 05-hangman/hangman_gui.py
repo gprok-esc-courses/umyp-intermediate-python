@@ -1,4 +1,4 @@
-from tkinter import Tk, Label, Entry, Button
+from tkinter import Tk, Label, Entry, Button, Canvas
 from hangman import Hangman
 
 def play_event():
@@ -12,6 +12,20 @@ def play_event():
         result_label.configure(text="FOUND :)")
         play_button['state'] = "disabled"
     letter_field.delete(0, 'end')
+    wrong = len(hangman.wrong)
+    match wrong:
+        case 6:
+            canvas.create_line(250, 150, 280, 170)
+        case 5:
+            canvas.create_line(250, 150, 230, 170)
+        case 4:
+            canvas.create_line(230, 150, 210, 170)
+        case 3:
+            canvas.create_line(230, 150, 210, 150)
+        case 2:
+            canvas.create_line(200, 150, 280, 150)
+        case 1:
+            canvas.create_oval(130, 130, 170, 170)
 
 def play_again_event():
     hangman.start_new_game()
@@ -37,6 +51,8 @@ result_label = Label(window, text='-')
 result_label.grid(row=3, column=0)
 play_again_button = Button(window, text="Play Again", command=play_again_event)
 play_again_button.grid(row=4, column=0)
+canvas = Canvas(window, bg="lightblue", width=300, height=300)
+canvas.grid(row=5, column=0)
 
 window.mainloop()
 
